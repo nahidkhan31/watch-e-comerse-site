@@ -34,3 +34,19 @@ function selectSize(size) {
     }
     }
 }
+
+// third pard..........
+
+const quantityElement = document.querySelectorAll(".quantity-button");
+for(let btn of quantityElement){
+    btn.addEventListener("click", function(event){
+        const amount = event.target.innerText === "+" ? 1 : -1
+      const quantity = document.getElementById("quantity");
+      const convertedQuantity = parseInt(quantity.innerText);
+      const newQuantity = Math.max(0, convertedQuantity + amount);
+      quantity.innerText = newQuantity;
+
+
+
+    })
+}
