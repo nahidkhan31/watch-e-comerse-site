@@ -16,7 +16,7 @@ for(let i=0; i< ringButtons.length; i++){
 
         event.target.classList.add("border-purple-600");
         const productImage = document.getElementById("product-image");
-        productImage.src = "../images/" +color+ ".png";
+        productImage.src = "../images/" + color + ".png";
     })
 }
 
@@ -45,8 +45,19 @@ for(let btn of quantityElement){
       const convertedQuantity = parseInt(quantity.innerText);
       const newQuantity = Math.max(0, convertedQuantity + amount);
       quantity.innerText = newQuantity;
-
-
-
     })
 }
+
+
+// add to card 
+   let cartCount = 0;
+document.getElementById("add-to-cart").addEventListener('click', function(event){
+    const quantity = parseInt(document.getElementById("quantity").innerText);
+    if(quantity > 0){
+        const checkoutContainer = document.getElementById("checkout-container").classList.remove("hidden");
+    
+    document.getElementById("cart-count").innerText = quantity;
+    }else{
+        alert("Please select a Qunatity");
+    }
+});
